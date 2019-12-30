@@ -9,11 +9,10 @@ interface IDispatchToProps {
 }
 type AllProps = IIssueState & IDispatchToProps;
 const SearchIssuesView: React.FC<AllProps> = ({
-  data,
+  filteredData,
   searchIssue
 }: AllProps) => {
   useEffect(() => {
-    debugger;
     searchIssue();
   }, [searchIssue]);
   const renderItem = (itemData: Issue) => {
@@ -21,7 +20,7 @@ const SearchIssuesView: React.FC<AllProps> = ({
   };
   return (
     <Autocomplete
-      data={data}
+      data={filteredData}
       renderItem={renderItem}
       searchValue={searchIssue}
       placeholder={"Search an issue"}

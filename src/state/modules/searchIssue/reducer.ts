@@ -1,7 +1,6 @@
 import { createReducer } from "reduxsauce";
 import { Types } from "./actions";
 import { IIssueState } from "./types";
-import { Issue } from "../../types";
 
 /* ------------- Initial State ------------- */
 
@@ -20,7 +19,7 @@ const request = (state: IIssueState) => ({
   error: null
 });
 
-const success = (state: IIssueState, action: { data: Issue[] }) => ({
+const success = (state: IIssueState, action: any) => ({
   ...state,
   data: action.data,
   filteredData: action.data,
@@ -28,14 +27,14 @@ const success = (state: IIssueState, action: { data: Issue[] }) => ({
   error: null
 });
 
-const filter = (state: IIssueState, action: { filteredData: Issue[] }) => ({
+const filter = (state: IIssueState, action: any) => ({
   ...state,
   filteredData: action.filteredData,
   isLoading: false,
   error: null
 });
 
-const failure = (state: IIssueState, action: { error: string }) => ({
+const failure = (state: IIssueState, action: any) => ({
   ...state,
   isLoading: false,
   error: action.error
