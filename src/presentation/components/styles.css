@@ -1,0 +1,29 @@
+.react-autosuggest__container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.react-autosuggest__input {
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.react-autosuggest__suggestions-list {
+  max-height: 500px;
+  padding: 0;
+  overflow-y: scroll;
+  border: 1px solid #d1d1d1;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: rgb(218, 218, 218);
+}
